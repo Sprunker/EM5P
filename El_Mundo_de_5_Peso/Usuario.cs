@@ -17,10 +17,33 @@ namespace El_Mundo_de_5_Peso
         public Usuario(bool mod)
         {
             InitializeComponent();
-            this.mod = mod;
+            this.mod = mod; 
+            
+            if (mod)
+            {
+                // Agregar propiedades //
+
+                BT_AgrUser.Click += new System.EventHandler(BT_AgrUser_Click);
+            }
+            else
+            {
+                // Agregar propiedades //
+
+                BT_AgrUser.Click += new System.EventHandler(BT_ModUser_Click);
+            }
         }
 
         private void BT_AgrUser_Click(object sender, EventArgs e)
+        {
+            Verificacion("agregar");
+        }
+
+        private void BT_ModUser_Click(object sender, EventArgs e)
+        {
+            Verificacion("modificar");
+        }
+
+        public void Verificacion(string instruccion)
         {
             bool DC = true;
             bool DL = true;
@@ -78,14 +101,14 @@ namespace El_Mundo_de_5_Peso
 
             // Verificacion de formatos de datos //
 
-            else if(DC)
+            else if (DC)
             {
 
                 if (TB_DiasLab.Text == "Fines de Semana")
                 {
                     DL = false;
                 }
-                if(TB_Horario.Text == "Vespertino")
+                if (TB_Horario.Text == "Vespertino")
                 {
                     H = false;
                 }
@@ -96,7 +119,7 @@ namespace El_Mundo_de_5_Peso
             {
                 ObjUsuario usuario = new ObjUsuario(TB_Nombre.Text, TB_User.Text, TB_Pass.Text, TB_Telefono.Text, DL, H); // Creación del usuario //
 
-                QueryUsuario agregar = new QueryUsuario("agregar", usuario); // Query para agregar nuevo usuario //
+                QueryUsuario agregar = new QueryUsuario(instruccion, usuario); // Query para agregar nuevo usuario //
             }
             else
             {

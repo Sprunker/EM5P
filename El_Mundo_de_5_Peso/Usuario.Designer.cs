@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuario));
-            this.label1 = new System.Windows.Forms.Label();
+            this.LB_Titulo = new System.Windows.Forms.Label();
             this.TB_Nombre = new System.Windows.Forms.TextBox();
             this.TB_User = new System.Windows.Forms.TextBox();
             this.TB_Pass = new System.Windows.Forms.TextBox();
@@ -45,17 +45,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // LB_Titulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Maiandra GD", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 37);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "NUEVO USUARIO";
+            this.LB_Titulo.AutoSize = true;
+            this.LB_Titulo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.LB_Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LB_Titulo.Font = new System.Drawing.Font("Maiandra GD", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Titulo.Location = new System.Drawing.Point(76, 28);
+            this.LB_Titulo.Name = "LB_Titulo";
+            this.LB_Titulo.Size = new System.Drawing.Size(270, 37);
+            this.LB_Titulo.TabIndex = 15;
+            this.LB_Titulo.Text = "NUEVO USUARIO";
             // 
             // TB_Nombre
             // 
@@ -189,7 +189,7 @@
             this.TB_Horario.Text = "Horario";
             this.TB_Horario.Click += new System.EventHandler(this.TB_Horario_Click);
             // 
-            // AgregarUsuario
+            // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -206,10 +206,10 @@
             this.Controls.Add(this.TB_RepPass);
             this.Controls.Add(this.TB_Pass);
             this.Controls.Add(this.TB_User);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LB_Titulo);
             this.Controls.Add(this.TB_Nombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AgregarUsuario";
+            this.Name = "Usuario";
             this.Text = "AgregarUsuario";
             this.Load += new System.EventHandler(this.AgregarUsuario_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AgregarUsuario_MouseMove);
@@ -222,7 +222,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LB_Titulo;
         private System.Windows.Forms.TextBox TB_Nombre;
         private System.Windows.Forms.TextBox TB_User;
         private System.Windows.Forms.TextBox TB_Pass;
