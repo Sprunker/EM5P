@@ -29,10 +29,18 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Ventas = new System.Windows.Forms.DataGridView();
+            this.NumVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalles = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TB_Fecha = new System.Windows.Forms.TextBox();
             this.TB_Usuario = new System.Windows.Forms.TextBox();
             this.BT_Buscar = new System.Windows.Forms.Button();
@@ -42,14 +50,7 @@
             this.BT_ModVenta = new System.Windows.Forms.Button();
             this.BT_MinimizeWindow = new System.Windows.Forms.PictureBox();
             this.BT_CloseWindow = new System.Windows.Forms.PictureBox();
-            this.NumVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalles = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BT_CancelarVenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).BeginInit();
@@ -93,113 +94,6 @@
             this.DGV_Ventas.Name = "DGV_Ventas";
             this.DGV_Ventas.Size = new System.Drawing.Size(754, 409);
             this.DGV_Ventas.TabIndex = 13;
-            // 
-            // TB_Fecha
-            // 
-            this.TB_Fecha.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Fecha.Location = new System.Drawing.Point(357, 73);
-            this.TB_Fecha.Name = "TB_Fecha";
-            this.TB_Fecha.Size = new System.Drawing.Size(169, 27);
-            this.TB_Fecha.TabIndex = 24;
-            this.TB_Fecha.Text = "Fecha";
-            this.TB_Fecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TB_Usuario
-            // 
-            this.TB_Usuario.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Usuario.Location = new System.Drawing.Point(178, 73);
-            this.TB_Usuario.Name = "TB_Usuario";
-            this.TB_Usuario.Size = new System.Drawing.Size(173, 27);
-            this.TB_Usuario.TabIndex = 23;
-            this.TB_Usuario.Text = "Usuario";
-            this.TB_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BT_Buscar
-            // 
-            this.BT_Buscar.AutoSize = true;
-            this.BT_Buscar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.BT_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_Buscar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_Buscar.Location = new System.Drawing.Point(681, 71);
-            this.BT_Buscar.Name = "BT_Buscar";
-            this.BT_Buscar.Size = new System.Drawing.Size(95, 29);
-            this.BT_Buscar.TabIndex = 22;
-            this.BT_Buscar.Text = "Buscar";
-            this.BT_Buscar.UseVisualStyleBackColor = false;
-            // 
-            // TB_NumVenta
-            // 
-            this.TB_NumVenta.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_NumVenta.Location = new System.Drawing.Point(23, 73);
-            this.TB_NumVenta.Name = "TB_NumVenta";
-            this.TB_NumVenta.Size = new System.Drawing.Size(149, 27);
-            this.TB_NumVenta.TabIndex = 21;
-            this.TB_NumVenta.Text = "Número de Venta";
-            this.TB_NumVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TB_Hora
-            // 
-            this.TB_Hora.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Hora.Location = new System.Drawing.Point(532, 73);
-            this.TB_Hora.Name = "TB_Hora";
-            this.TB_Hora.Size = new System.Drawing.Size(143, 27);
-            this.TB_Hora.TabIndex = 25;
-            this.TB_Hora.Text = "Hora";
-            this.TB_Hora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BT_NuevaVenta
-            // 
-            this.BT_NuevaVenta.AutoSize = true;
-            this.BT_NuevaVenta.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.BT_NuevaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_NuevaVenta.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_NuevaVenta.Location = new System.Drawing.Point(459, 536);
-            this.BT_NuevaVenta.Name = "BT_NuevaVenta";
-            this.BT_NuevaVenta.Size = new System.Drawing.Size(317, 29);
-            this.BT_NuevaVenta.TabIndex = 26;
-            this.BT_NuevaVenta.Text = "Nueva Venta";
-            this.BT_NuevaVenta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BT_NuevaVenta.UseVisualStyleBackColor = false;
-            this.BT_NuevaVenta.Click += new System.EventHandler(this.BT_NuevaVenta_Click);
-            // 
-            // BT_ModVenta
-            // 
-            this.BT_ModVenta.AutoSize = true;
-            this.BT_ModVenta.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.BT_ModVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_ModVenta.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_ModVenta.Location = new System.Drawing.Point(23, 536);
-            this.BT_ModVenta.Name = "BT_ModVenta";
-            this.BT_ModVenta.Size = new System.Drawing.Size(317, 29);
-            this.BT_ModVenta.TabIndex = 27;
-            this.BT_ModVenta.Text = "Modificar Venta";
-            this.BT_ModVenta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BT_ModVenta.UseVisualStyleBackColor = false;
-            this.BT_ModVenta.Click += new System.EventHandler(this.BT_ModVenta_Click);
-            // 
-            // BT_MinimizeWindow
-            // 
-            this.BT_MinimizeWindow.BackColor = System.Drawing.Color.Transparent;
-            this.BT_MinimizeWindow.Image = ((System.Drawing.Image)(resources.GetObject("BT_MinimizeWindow.Image")));
-            this.BT_MinimizeWindow.Location = new System.Drawing.Point(705, 16);
-            this.BT_MinimizeWindow.Name = "BT_MinimizeWindow";
-            this.BT_MinimizeWindow.Size = new System.Drawing.Size(33, 33);
-            this.BT_MinimizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.BT_MinimizeWindow.TabIndex = 29;
-            this.BT_MinimizeWindow.TabStop = false;
-            this.BT_MinimizeWindow.Click += new System.EventHandler(this.BT_MinimizeWindow_Click);
-            // 
-            // BT_CloseWindow
-            // 
-            this.BT_CloseWindow.BackColor = System.Drawing.Color.Transparent;
-            this.BT_CloseWindow.Image = global::El_Mundo_de_5_Peso.Properties.Resources.close_window;
-            this.BT_CloseWindow.Location = new System.Drawing.Point(744, 16);
-            this.BT_CloseWindow.Name = "BT_CloseWindow";
-            this.BT_CloseWindow.Size = new System.Drawing.Size(33, 33);
-            this.BT_CloseWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.BT_CloseWindow.TabIndex = 28;
-            this.BT_CloseWindow.TabStop = false;
-            this.BT_CloseWindow.Click += new System.EventHandler(this.BT_CloseWindow_Click);
             // 
             // NumVenta
             // 
@@ -268,6 +162,127 @@
             this.Detalles.UseColumnTextForButtonValue = true;
             this.Detalles.Width = 80;
             // 
+            // TB_Fecha
+            // 
+            this.TB_Fecha.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Fecha.Location = new System.Drawing.Point(357, 73);
+            this.TB_Fecha.Name = "TB_Fecha";
+            this.TB_Fecha.Size = new System.Drawing.Size(169, 27);
+            this.TB_Fecha.TabIndex = 24;
+            this.TB_Fecha.Text = "Fecha";
+            this.TB_Fecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TB_Usuario
+            // 
+            this.TB_Usuario.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Usuario.Location = new System.Drawing.Point(178, 73);
+            this.TB_Usuario.Name = "TB_Usuario";
+            this.TB_Usuario.Size = new System.Drawing.Size(173, 27);
+            this.TB_Usuario.TabIndex = 23;
+            this.TB_Usuario.Text = "Usuario";
+            this.TB_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BT_Buscar
+            // 
+            this.BT_Buscar.AutoSize = true;
+            this.BT_Buscar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BT_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_Buscar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_Buscar.Location = new System.Drawing.Point(681, 71);
+            this.BT_Buscar.Name = "BT_Buscar";
+            this.BT_Buscar.Size = new System.Drawing.Size(95, 29);
+            this.BT_Buscar.TabIndex = 22;
+            this.BT_Buscar.Text = "Buscar";
+            this.BT_Buscar.UseVisualStyleBackColor = false;
+            // 
+            // TB_NumVenta
+            // 
+            this.TB_NumVenta.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_NumVenta.Location = new System.Drawing.Point(23, 73);
+            this.TB_NumVenta.Name = "TB_NumVenta";
+            this.TB_NumVenta.Size = new System.Drawing.Size(149, 27);
+            this.TB_NumVenta.TabIndex = 21;
+            this.TB_NumVenta.Text = "Número de Venta";
+            this.TB_NumVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TB_Hora
+            // 
+            this.TB_Hora.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Hora.Location = new System.Drawing.Point(532, 73);
+            this.TB_Hora.Name = "TB_Hora";
+            this.TB_Hora.Size = new System.Drawing.Size(143, 27);
+            this.TB_Hora.TabIndex = 25;
+            this.TB_Hora.Text = "Hora";
+            this.TB_Hora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BT_NuevaVenta
+            // 
+            this.BT_NuevaVenta.AutoSize = true;
+            this.BT_NuevaVenta.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BT_NuevaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_NuevaVenta.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_NuevaVenta.Location = new System.Drawing.Point(23, 536);
+            this.BT_NuevaVenta.Name = "BT_NuevaVenta";
+            this.BT_NuevaVenta.Size = new System.Drawing.Size(251, 29);
+            this.BT_NuevaVenta.TabIndex = 26;
+            this.BT_NuevaVenta.Text = "Nueva Venta";
+            this.BT_NuevaVenta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BT_NuevaVenta.UseVisualStyleBackColor = false;
+            this.BT_NuevaVenta.Click += new System.EventHandler(this.BT_NuevaVenta_Click);
+            // 
+            // BT_ModVenta
+            // 
+            this.BT_ModVenta.AutoSize = true;
+            this.BT_ModVenta.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BT_ModVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_ModVenta.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_ModVenta.Location = new System.Drawing.Point(281, 536);
+            this.BT_ModVenta.Name = "BT_ModVenta";
+            this.BT_ModVenta.Size = new System.Drawing.Size(245, 29);
+            this.BT_ModVenta.TabIndex = 27;
+            this.BT_ModVenta.Text = "Modificar Venta";
+            this.BT_ModVenta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BT_ModVenta.UseVisualStyleBackColor = false;
+            this.BT_ModVenta.Click += new System.EventHandler(this.BT_ModVenta_Click);
+            // 
+            // BT_MinimizeWindow
+            // 
+            this.BT_MinimizeWindow.BackColor = System.Drawing.Color.Transparent;
+            this.BT_MinimizeWindow.Image = ((System.Drawing.Image)(resources.GetObject("BT_MinimizeWindow.Image")));
+            this.BT_MinimizeWindow.Location = new System.Drawing.Point(705, 16);
+            this.BT_MinimizeWindow.Name = "BT_MinimizeWindow";
+            this.BT_MinimizeWindow.Size = new System.Drawing.Size(33, 33);
+            this.BT_MinimizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BT_MinimizeWindow.TabIndex = 29;
+            this.BT_MinimizeWindow.TabStop = false;
+            this.BT_MinimizeWindow.Click += new System.EventHandler(this.BT_MinimizeWindow_Click);
+            // 
+            // BT_CloseWindow
+            // 
+            this.BT_CloseWindow.BackColor = System.Drawing.Color.Transparent;
+            this.BT_CloseWindow.Image = global::El_Mundo_de_5_Peso.Properties.Resources.close_window;
+            this.BT_CloseWindow.Location = new System.Drawing.Point(744, 16);
+            this.BT_CloseWindow.Name = "BT_CloseWindow";
+            this.BT_CloseWindow.Size = new System.Drawing.Size(33, 33);
+            this.BT_CloseWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BT_CloseWindow.TabIndex = 28;
+            this.BT_CloseWindow.TabStop = false;
+            this.BT_CloseWindow.Click += new System.EventHandler(this.BT_CloseWindow_Click);
+            // 
+            // BT_CancelarVenta
+            // 
+            this.BT_CancelarVenta.AutoSize = true;
+            this.BT_CancelarVenta.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BT_CancelarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_CancelarVenta.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_CancelarVenta.Location = new System.Drawing.Point(533, 536);
+            this.BT_CancelarVenta.Name = "BT_CancelarVenta";
+            this.BT_CancelarVenta.Size = new System.Drawing.Size(244, 29);
+            this.BT_CancelarVenta.TabIndex = 30;
+            this.BT_CancelarVenta.Text = "Cancelar Venta";
+            this.BT_CancelarVenta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BT_CancelarVenta.UseVisualStyleBackColor = false;
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,6 +290,7 @@
             this.BackgroundImage = global::El_Mundo_de_5_Peso.Properties.Resources._65574304_gradiente_azul_suave_resumen_fondo_oscuro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 580);
+            this.Controls.Add(this.BT_CancelarVenta);
             this.Controls.Add(this.BT_MinimizeWindow);
             this.Controls.Add(this.BT_CloseWindow);
             this.Controls.Add(this.BT_ModVenta);
@@ -320,5 +336,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
         private System.Windows.Forms.DataGridViewButtonColumn Detalles;
+        private System.Windows.Forms.Button BT_CancelarVenta;
     }
 }
