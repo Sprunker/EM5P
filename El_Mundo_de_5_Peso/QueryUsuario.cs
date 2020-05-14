@@ -11,7 +11,7 @@ namespace El_Mundo_de_5_Peso
 {
     public class QueryUsuario
     {
-        public QueryUsuario(string comando, Usuario usuario)
+        public QueryUsuario(string comando, ObjUsuario usuario)
         {
             try
             {

@@ -1,6 +1,6 @@
 ﻿namespace El_Mundo_de_5_Peso
 {
-    partial class AgregarUsuario
+    partial class Usuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarUsuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuario));
             this.label1 = new System.Windows.Forms.Label();
             this.TB_Nombre = new System.Windows.Forms.TextBox();
             this.TB_User = new System.Windows.Forms.TextBox();
@@ -211,6 +211,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarUsuario";
             this.Text = "AgregarUsuario";
+            this.Load += new System.EventHandler(this.AgregarUsuario_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AgregarUsuario_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).EndInit();

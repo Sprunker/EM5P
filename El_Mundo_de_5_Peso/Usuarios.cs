@@ -32,7 +32,7 @@ namespace El_Mundo_de_5_Peso
         private void BT_AgrUser_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            AgregarUsuario agrUser = new AgregarUsuario();
+            Usuario agrUser = new Usuario(true);
             agrUser.ShowDialog();
             this.Visible = true;
         }
@@ -40,9 +40,14 @@ namespace El_Mundo_de_5_Peso
         private void BT_ModUser_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            ModificarUsuario modUser = new ModificarUsuario();
+            Usuario modUser = new Usuario(false);
             modUser.ShowDialog();
             this.Visible = true;
+        }
+
+        private void Usuarios_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void Usuarios_MouseMove(object sender, MouseEventArgs e)
