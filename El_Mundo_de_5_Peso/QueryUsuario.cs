@@ -40,14 +40,6 @@ namespace El_Mundo_de_5_Peso
                                 MessageBox.Show("Se ha modificado el usuario " + usuario.usuario);
                             }
                             break;
-
-                        case "eliminar":
-                            {
-                                SqlCommand cmd = new SqlCommand("DELETE Usuario where id = " + usuario.id, conexion);
-                                cmd.ExecuteNonQuery();
-                                MessageBox.Show("Se ha eliminado el usuario " + usuario.usuario);
-                            }
-                            break;
                     }
                     conexion.Close();
                 }

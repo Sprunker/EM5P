@@ -12,14 +12,14 @@ namespace El_Mundo_de_5_Peso
 {
     public partial class Usuario : Form
     {
-        bool mod;
+        string mod;
 
-        public Usuario(bool mod)
+        public Usuario(string mod)
         {
             InitializeComponent();
             this.mod = mod; 
             
-            if (mod)
+            if (mod == "agregar")
             {
                 // Agregar propiedades //
                 LB_Titulo.Location = new Point(76, 28);
@@ -28,7 +28,7 @@ namespace El_Mundo_de_5_Peso
 
                 BT_AgrUser.Click += new System.EventHandler(BT_AgrUser_Click);
             }
-            else
+            else if(mod == "modificar")
             {
                 // Agregar propiedades //
                 LB_Titulo.Location = new Point(40, 34);
@@ -102,12 +102,8 @@ namespace El_Mundo_de_5_Peso
 
                 DC = false;
             }
-
-            // Fin de verificaciones de campos llenos //
-
-            // Verificacion de formatos de datos //
-
-            else if (DC)
+            
+            if (DC)
             {
 
                 if (TB_DiasLab.Text == "Fines de Semana")
@@ -119,6 +115,11 @@ namespace El_Mundo_de_5_Peso
                     H = false;
                 }
             }
+
+            // Fin de verificaciones de campos llenos //
+
+            // Verificacion de formatos de datos //
+
             // Fin de verificaciones de formatos de datos //
 
             if (TB_Pass.Text == TB_RepPass.Text) // Verificación de contraseñas //

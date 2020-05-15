@@ -212,6 +212,7 @@
             this.BT_BorUser.Text = "Borrar Usuario";
             this.BT_BorUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BT_BorUser.UseVisualStyleBackColor = false;
+            this.BT_BorUser.Click += new System.EventHandler(this.BT_BorUser_Click);
             // 
             // BT_ModUser
             // 

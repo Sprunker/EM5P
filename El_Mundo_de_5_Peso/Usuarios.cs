@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace El_Mundo_de_5_Peso
 {
@@ -15,6 +17,11 @@ namespace El_Mundo_de_5_Peso
         public Usuarios()
         {
             InitializeComponent();
+        }
+
+        private void Usuarios_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void BT_CloseWindow_Click(object sender, EventArgs e)
@@ -32,7 +39,7 @@ namespace El_Mundo_de_5_Peso
         private void BT_AgrUser_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Usuario agrUser = new Usuario(true);
+            Usuario agrUser = new Usuario("agregar");
             agrUser.ShowDialog();
             this.Visible = true;
         }
@@ -40,14 +47,33 @@ namespace El_Mundo_de_5_Peso
         private void BT_ModUser_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Usuario modUser = new Usuario(false);
+            Usuario modUser = new Usuario("modificar");
             modUser.ShowDialog();
             this.Visible = true;
         }
 
-        private void Usuarios_Load(object sender, EventArgs e)
+        private void BT_BorUser_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string cnn = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
+                using (SqlConnection conexion = new SqlConnection(cnn))
+                {
+                    // Obtención del usuario //
 
+                    ObjUsuario usuario = new ObjUsuario();
+
+                    SqlCommand cmd = new SqlCommand("DELETE Usuario where id = " + usuario.id, conexion);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Se ha eliminado el usuario " + usuario.usuario);
+
+                    QueryUsuario query = new QueryUsuario("eliminar", usuario);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void Usuarios_MouseMove(object sender, MouseEventArgs e)
