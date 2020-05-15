@@ -54,12 +54,14 @@ namespace El_Mundo_de_5_Peso
 
         private void BT_BorUser_Click(object sender, EventArgs e)
         {
+            // TODO: Verificar que haya seleccionado un usuario //
+
             try
             {
                 string cnn = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
                 using (SqlConnection conexion = new SqlConnection(cnn))
                 {
-                    // Obtención del usuario //
+                    // TODO: Obtención del usuario //
 
                     ObjUsuario usuario = new ObjUsuario();
 
