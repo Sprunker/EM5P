@@ -22,12 +22,18 @@ namespace El_Mundo_de_5_Peso
             if (mod)
             {
                 // Agregar propiedades //
+                LB_Titulo.Location = new Point(76, 28);
+                LB_Titulo.Text = "NUEVO USUARIO";
+                BT_AgrUser.Text = "Agregar Usuario";
 
                 BT_AgrUser.Click += new System.EventHandler(BT_AgrUser_Click);
             }
             else
             {
                 // Agregar propiedades //
+                LB_Titulo.Location = new Point(40, 34);
+                LB_Titulo.Text = "MODIFICAR USUARIO";
+                BT_AgrUser.Text = "Guardar Datos";
 
                 BT_AgrUser.Click += new System.EventHandler(BT_ModUser_Click);
             }
