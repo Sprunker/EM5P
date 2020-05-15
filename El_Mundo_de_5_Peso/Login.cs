@@ -40,8 +40,17 @@ namespace El_Mundo_de_5_Peso
                         if (dr.Read())
                         {
                             this.Visible = false;
-                            AdminUI admForm = new AdminUI(TB_User.Text);
-                            admForm.ShowDialog();
+                            if (TB_User.Text == "admin")
+                            {
+                                AdminUI admForm = new AdminUI(TB_User.Text);
+                                admForm.ShowDialog();
+                            }
+                            else
+                            {
+                                Ventas ventas = new Ventas();
+                                ventas.ShowDialog();
+                            }
+
                             TB_User.Text = "Usuario";
                             TB_Password.Text = "Contraseña";
                             this.Visible = true;
