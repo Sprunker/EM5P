@@ -12,6 +12,8 @@ namespace El_Mundo_de_5_Peso
 {
     public partial class Ventas : Form
     {
+        int idVenta;
+
         public Ventas()
         {
             InitializeComponent();
@@ -41,7 +43,7 @@ namespace El_Mundo_de_5_Peso
         private void BT_ModVenta_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Venta venta = new Venta(); // TODO: Pasar los datos de la venta que se desea modificar
+            Venta venta = new Venta("modificar", idVenta); // TODO: Pasar los datos de la venta que se desea modificar
             venta.ShowDialog();
             this.Visible = true;
         }
@@ -49,7 +51,7 @@ namespace El_Mundo_de_5_Peso
         private void BT_NuevaVenta_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Venta venta = new Venta();
+            Venta venta = new Venta("agregar", 0);
             venta.ShowDialog();
             this.Visible = true;
         }

@@ -44,6 +44,7 @@
             this.TB_Cantidad = new System.Windows.Forms.TextBox();
             this.BT_MinimizeWindow = new System.Windows.Forms.PictureBox();
             this.BT_CloseWindow = new System.Windows.Forms.PictureBox();
+            this.BT_ReaVenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Venta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).BeginInit();
@@ -135,9 +136,9 @@
             // TB_NomPro
             // 
             this.TB_NomPro.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_NomPro.Location = new System.Drawing.Point(209, 532);
+            this.TB_NomPro.Location = new System.Drawing.Point(193, 532);
             this.TB_NomPro.Name = "TB_NomPro";
-            this.TB_NomPro.Size = new System.Drawing.Size(210, 27);
+            this.TB_NomPro.Size = new System.Drawing.Size(158, 27);
             this.TB_NomPro.TabIndex = 26;
             this.TB_NomPro.Text = "Nombre de Artículo";
             this.TB_NomPro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -148,9 +149,9 @@
             this.BT_Agregar.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BT_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_Agregar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_Agregar.Location = new System.Drawing.Point(568, 531);
+            this.BT_Agregar.Location = new System.Drawing.Point(452, 531);
             this.BT_Agregar.Name = "BT_Agregar";
-            this.BT_Agregar.Size = new System.Drawing.Size(209, 29);
+            this.BT_Agregar.Size = new System.Drawing.Size(120, 29);
             this.BT_Agregar.TabIndex = 25;
             this.BT_Agregar.Text = "Agregar";
             this.BT_Agregar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -162,7 +163,7 @@
             this.TB_CodProd.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_CodProd.Location = new System.Drawing.Point(23, 532);
             this.TB_CodProd.Name = "TB_CodProd";
-            this.TB_CodProd.Size = new System.Drawing.Size(180, 27);
+            this.TB_CodProd.Size = new System.Drawing.Size(164, 27);
             this.TB_CodProd.TabIndex = 24;
             this.TB_CodProd.Text = "Código de Artículo";
             this.TB_CodProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -170,9 +171,9 @@
             // TB_Cantidad
             // 
             this.TB_Cantidad.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Cantidad.Location = new System.Drawing.Point(425, 532);
+            this.TB_Cantidad.Location = new System.Drawing.Point(357, 532);
             this.TB_Cantidad.Name = "TB_Cantidad";
-            this.TB_Cantidad.Size = new System.Drawing.Size(137, 27);
+            this.TB_Cantidad.Size = new System.Drawing.Size(89, 27);
             this.TB_Cantidad.TabIndex = 27;
             this.TB_Cantidad.Text = "Cantidad";
             this.TB_Cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -201,6 +202,20 @@
             this.BT_CloseWindow.TabStop = false;
             this.BT_CloseWindow.Click += new System.EventHandler(this.BT_CloseWindow_Click);
             // 
+            // BT_ReaVenta
+            // 
+            this.BT_ReaVenta.AutoSize = true;
+            this.BT_ReaVenta.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BT_ReaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_ReaVenta.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_ReaVenta.Location = new System.Drawing.Point(578, 531);
+            this.BT_ReaVenta.Name = "BT_ReaVenta";
+            this.BT_ReaVenta.Size = new System.Drawing.Size(199, 29);
+            this.BT_ReaVenta.TabIndex = 30;
+            this.BT_ReaVenta.Text = "Realizar Venta";
+            this.BT_ReaVenta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BT_ReaVenta.UseVisualStyleBackColor = false;
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +223,7 @@
             this.BackgroundImage = global::El_Mundo_de_5_Peso.Properties.Resources._65574304_gradiente_azul_suave_resumen_fondo_oscuro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 580);
+            this.Controls.Add(this.BT_ReaVenta);
             this.Controls.Add(this.BT_MinimizeWindow);
             this.Controls.Add(this.BT_CloseWindow);
             this.Controls.Add(this.TB_Cantidad);
@@ -245,5 +261,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioU;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.Button BT_ReaVenta;
     }
 }
