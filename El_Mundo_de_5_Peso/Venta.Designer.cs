@@ -30,36 +30,36 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Venta));
-            this.label1 = new System.Windows.Forms.Label();
+            this.LB_Titulo = new System.Windows.Forms.Label();
             this.DGV_Venta = new System.Windows.Forms.DataGridView();
-            this.TB_NomPro = new System.Windows.Forms.TextBox();
-            this.BT_Agregar = new System.Windows.Forms.Button();
-            this.TB_CodProd = new System.Windows.Forms.TextBox();
-            this.TB_Cantidad = new System.Windows.Forms.TextBox();
-            this.BT_MinimizeWindow = new System.Windows.Forms.PictureBox();
-            this.BT_CloseWindow = new System.Windows.Forms.PictureBox();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.TB_NomPro = new System.Windows.Forms.TextBox();
+            this.BT_Agregar = new System.Windows.Forms.Button();
+            this.TB_CodProd = new System.Windows.Forms.TextBox();
+            this.TB_Cantidad = new System.Windows.Forms.TextBox();
+            this.BT_MinimizeWindow = new System.Windows.Forms.PictureBox();
+            this.BT_CloseWindow = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Venta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // LB_Titulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Maiandra GD", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(347, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 37);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "VENTA";
+            this.LB_Titulo.AutoSize = true;
+            this.LB_Titulo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.LB_Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LB_Titulo.Font = new System.Drawing.Font("Maiandra GD", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Titulo.Location = new System.Drawing.Point(347, 16);
+            this.LB_Titulo.Name = "LB_Titulo";
+            this.LB_Titulo.Size = new System.Drawing.Size(115, 37);
+            this.LB_Titulo.TabIndex = 13;
+            this.LB_Titulo.Text = "VENTA";
             // 
             // DGV_Venta
             // 
@@ -85,74 +85,6 @@
             this.DGV_Venta.Name = "DGV_Venta";
             this.DGV_Venta.Size = new System.Drawing.Size(754, 438);
             this.DGV_Venta.TabIndex = 14;
-            // 
-            // TB_NomPro
-            // 
-            this.TB_NomPro.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_NomPro.Location = new System.Drawing.Point(209, 532);
-            this.TB_NomPro.Name = "TB_NomPro";
-            this.TB_NomPro.Size = new System.Drawing.Size(210, 27);
-            this.TB_NomPro.TabIndex = 26;
-            this.TB_NomPro.Text = "Nombre de Artículo";
-            this.TB_NomPro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BT_Agregar
-            // 
-            this.BT_Agregar.AutoSize = true;
-            this.BT_Agregar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.BT_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_Agregar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_Agregar.Location = new System.Drawing.Point(568, 531);
-            this.BT_Agregar.Name = "BT_Agregar";
-            this.BT_Agregar.Size = new System.Drawing.Size(209, 29);
-            this.BT_Agregar.TabIndex = 25;
-            this.BT_Agregar.Text = "Agregar";
-            this.BT_Agregar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BT_Agregar.UseVisualStyleBackColor = false;
-            // 
-            // TB_CodProd
-            // 
-            this.TB_CodProd.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_CodProd.Location = new System.Drawing.Point(23, 532);
-            this.TB_CodProd.Name = "TB_CodProd";
-            this.TB_CodProd.Size = new System.Drawing.Size(180, 27);
-            this.TB_CodProd.TabIndex = 24;
-            this.TB_CodProd.Text = "Código de Artículo";
-            this.TB_CodProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TB_Cantidad
-            // 
-            this.TB_Cantidad.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Cantidad.Location = new System.Drawing.Point(425, 532);
-            this.TB_Cantidad.Name = "TB_Cantidad";
-            this.TB_Cantidad.Size = new System.Drawing.Size(137, 27);
-            this.TB_Cantidad.TabIndex = 27;
-            this.TB_Cantidad.Text = "Cantidad";
-            this.TB_Cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BT_MinimizeWindow
-            // 
-            this.BT_MinimizeWindow.BackColor = System.Drawing.Color.Transparent;
-            this.BT_MinimizeWindow.Image = ((System.Drawing.Image)(resources.GetObject("BT_MinimizeWindow.Image")));
-            this.BT_MinimizeWindow.Location = new System.Drawing.Point(705, 16);
-            this.BT_MinimizeWindow.Name = "BT_MinimizeWindow";
-            this.BT_MinimizeWindow.Size = new System.Drawing.Size(33, 33);
-            this.BT_MinimizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.BT_MinimizeWindow.TabIndex = 29;
-            this.BT_MinimizeWindow.TabStop = false;
-            this.BT_MinimizeWindow.Click += new System.EventHandler(this.BT_MinimizeWindow_Click);
-            // 
-            // BT_CloseWindow
-            // 
-            this.BT_CloseWindow.BackColor = System.Drawing.Color.Transparent;
-            this.BT_CloseWindow.Image = global::El_Mundo_de_5_Peso.Properties.Resources.close_window;
-            this.BT_CloseWindow.Location = new System.Drawing.Point(744, 16);
-            this.BT_CloseWindow.Name = "BT_CloseWindow";
-            this.BT_CloseWindow.Size = new System.Drawing.Size(33, 33);
-            this.BT_CloseWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.BT_CloseWindow.TabIndex = 28;
-            this.BT_CloseWindow.TabStop = false;
-            this.BT_CloseWindow.Click += new System.EventHandler(this.BT_CloseWindow_Click);
             // 
             // Codigo
             // 
@@ -200,6 +132,75 @@
             this.Eliminar.UseColumnTextForButtonValue = true;
             this.Eliminar.Width = 90;
             // 
+            // TB_NomPro
+            // 
+            this.TB_NomPro.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_NomPro.Location = new System.Drawing.Point(209, 532);
+            this.TB_NomPro.Name = "TB_NomPro";
+            this.TB_NomPro.Size = new System.Drawing.Size(210, 27);
+            this.TB_NomPro.TabIndex = 26;
+            this.TB_NomPro.Text = "Nombre de Artículo";
+            this.TB_NomPro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BT_Agregar
+            // 
+            this.BT_Agregar.AutoSize = true;
+            this.BT_Agregar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BT_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_Agregar.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_Agregar.Location = new System.Drawing.Point(568, 531);
+            this.BT_Agregar.Name = "BT_Agregar";
+            this.BT_Agregar.Size = new System.Drawing.Size(209, 29);
+            this.BT_Agregar.TabIndex = 25;
+            this.BT_Agregar.Text = "Agregar";
+            this.BT_Agregar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BT_Agregar.UseVisualStyleBackColor = false;
+            this.BT_Agregar.Click += new System.EventHandler(this.BT_Agregar_Click);
+            // 
+            // TB_CodProd
+            // 
+            this.TB_CodProd.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_CodProd.Location = new System.Drawing.Point(23, 532);
+            this.TB_CodProd.Name = "TB_CodProd";
+            this.TB_CodProd.Size = new System.Drawing.Size(180, 27);
+            this.TB_CodProd.TabIndex = 24;
+            this.TB_CodProd.Text = "Código de Artículo";
+            this.TB_CodProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TB_Cantidad
+            // 
+            this.TB_Cantidad.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Cantidad.Location = new System.Drawing.Point(425, 532);
+            this.TB_Cantidad.Name = "TB_Cantidad";
+            this.TB_Cantidad.Size = new System.Drawing.Size(137, 27);
+            this.TB_Cantidad.TabIndex = 27;
+            this.TB_Cantidad.Text = "Cantidad";
+            this.TB_Cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BT_MinimizeWindow
+            // 
+            this.BT_MinimizeWindow.BackColor = System.Drawing.Color.Transparent;
+            this.BT_MinimizeWindow.Image = ((System.Drawing.Image)(resources.GetObject("BT_MinimizeWindow.Image")));
+            this.BT_MinimizeWindow.Location = new System.Drawing.Point(705, 16);
+            this.BT_MinimizeWindow.Name = "BT_MinimizeWindow";
+            this.BT_MinimizeWindow.Size = new System.Drawing.Size(33, 33);
+            this.BT_MinimizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BT_MinimizeWindow.TabIndex = 29;
+            this.BT_MinimizeWindow.TabStop = false;
+            this.BT_MinimizeWindow.Click += new System.EventHandler(this.BT_MinimizeWindow_Click);
+            // 
+            // BT_CloseWindow
+            // 
+            this.BT_CloseWindow.BackColor = System.Drawing.Color.Transparent;
+            this.BT_CloseWindow.Image = global::El_Mundo_de_5_Peso.Properties.Resources.close_window;
+            this.BT_CloseWindow.Location = new System.Drawing.Point(744, 16);
+            this.BT_CloseWindow.Name = "BT_CloseWindow";
+            this.BT_CloseWindow.Size = new System.Drawing.Size(33, 33);
+            this.BT_CloseWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BT_CloseWindow.TabIndex = 28;
+            this.BT_CloseWindow.TabStop = false;
+            this.BT_CloseWindow.Click += new System.EventHandler(this.BT_CloseWindow_Click);
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,7 +215,7 @@
             this.Controls.Add(this.BT_Agregar);
             this.Controls.Add(this.TB_CodProd);
             this.Controls.Add(this.DGV_Venta);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LB_Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Venta";
             this.Text = "Venta";
@@ -230,7 +231,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LB_Titulo;
         private System.Windows.Forms.DataGridView DGV_Venta;
         private System.Windows.Forms.TextBox TB_NomPro;
         private System.Windows.Forms.Button BT_Agregar;

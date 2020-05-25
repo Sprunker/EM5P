@@ -17,14 +17,23 @@ namespace El_Mundo_de_5_Peso
 
         public ObjArticulo() { }
 
-        public ObjArticulo(int codigo, string nombre, int cantidad, decimal precio, string detalles, string imagen)
+        public ObjArticulo(string nombre, int cantidad, decimal precio, string detalles, string imagen)
         {
-            this.codigo = codigo;
             this.nombre = nombre;
             this.cantidad = cantidad;
             this.precio = precio;
             this.detalles = detalles;
             this.imagen = imagen;
+        }
+
+        public ObjArticulo(ObjArticulo articulo)
+        {
+            this.codigo = articulo.codigo;
+            this.nombre = articulo.nombre;
+            this.cantidad = articulo.cantidad;
+            this.precio = articulo.precio;
+            this.detalles = articulo.detalles;
+            this.imagen = articulo.imagen;
         }
     }
 }

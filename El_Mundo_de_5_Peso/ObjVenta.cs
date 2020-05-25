@@ -1,4 +1,5 @@
-﻿using System;
+﻿using El_Mundo_de_5_Peso.M5PDBDataSet2TableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,8 @@ namespace El_Mundo_de_5_Peso
 
         public ObjVenta() { }
 
-        public ObjVenta(int numVenta, string usuario, string articulos, int cantidad, decimal total, DateTime fecha, DateTime hora, string estado)
+        public ObjVenta(string usuario, string articulos, int cantidad, decimal total, DateTime fecha, DateTime hora, string estado)
         {
-            this.numVenta = numVenta;
             this.usuario = usuario;
             this.articulos = articulos;
             this.cantidad = cantidad;
@@ -29,6 +29,18 @@ namespace El_Mundo_de_5_Peso
             this.fecha = fecha;
             this.hora = hora;
             this.estado = estado;
+        }
+
+        public ObjVenta(ObjVenta venta)
+        {
+            this.numVenta = venta.numVenta;
+            this.usuario = venta.usuario;
+            this.articulos = venta.articulos;
+            this.cantidad = venta.cantidad;
+            this.total = venta.total;
+            this.fecha = venta.fecha;
+            this.hora = venta.hora;
+            this.estado = venta.estado;
         }
     }
 }

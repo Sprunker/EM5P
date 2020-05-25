@@ -15,10 +15,14 @@ namespace El_Mundo_de_5_Peso
         public Ventas()
         {
             InitializeComponent();
+
+            DGV_Ventas.AllowUserToAddRows = false;
         }
 
         private void Ventas_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'm5PDBDataSet2.Venta' Puede moverla o quitarla según sea necesario.
+            this.ventaTableAdapter.Fill(this.m5PDBDataSet2.Venta);
 
         }
 

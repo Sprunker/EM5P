@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace El_Mundo_de_5_Peso
 {
-    public class QueryUsuario
+    class QueryVenta
     {
-        public QueryUsuario(string comando, ObjUsuario usuario)
+        public QueryVenta(string comando, ObjVenta venta)
         {
             try
             {
@@ -23,21 +23,21 @@ namespace El_Mundo_de_5_Peso
                     {
                         case "agregar":
                             {
-                                SqlCommand cmd = new SqlCommand("INSERT INTO Usuario(nombre, usuario, pass, telefono, diasLab, horario)" +
-                                    "VALUES ('"+usuario.nombre+"', '"+usuario.usuario+"', '"+usuario.pass+"', '"+usuario.telefono+"'," +
-                                    "'"+usuario.diasLab+"', '"+usuario.horario+"')", conexion);
+                                SqlCommand cmd = new SqlCommand("INSERT INTO Venta(usuario, articulos, cantidad, total, fecha, hora, estado)" +
+                                    "VALUES ('" + venta.usuario + "', '" + venta.articulos + "', '" + venta.cantidad + "', '" + venta.fecha + "'," +
+                                    "'" + venta.hora + "', '" + venta.estado + "')", conexion);
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Se ha agregado el usuario " + usuario.usuario);
+                                MessageBox.Show("Venta Realizada");
                             }
                             break;
 
                         case "modificar":
                             {
-                                SqlCommand cmd = new SqlCommand("UPDATE Usuario SET nombre = '"+usuario.nombre+"', usuario = '"+usuario.usuario+"'," +
-                                    " pass = '"+usuario.pass+"', telefono = '"+usuario.telefono+"', diasLab = '"+usuario.diasLab+"'," +
-                                    " horario = '"+usuario.horario+ "' WHERE id = " + usuario.id + "", conexion);
+                                SqlCommand cmd = new SqlCommand("UPDATE Venta SET usuario = '" + venta.usuario + "', articulos = '" + venta.articulos + "'," +
+                                    " cantidad = '" + venta.cantidad + "', total = '" + venta.total + "', fecha = '" + venta.fecha + "'," +
+                                    " hora = '" + venta.hora + ", estado = '" + venta.estado + "' WHERE id = " + venta.numVenta + "", conexion);
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Se ha modificado el usuario " + usuario.usuario);
+                                MessageBox.Show("Venta modificada");
                             }
                             break;
                     }

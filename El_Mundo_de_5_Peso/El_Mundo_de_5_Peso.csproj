@@ -53,16 +53,33 @@
     <Compile Include="AdminUI.Designer.cs">
       <DependentUpon>AdminUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarArticulo.cs">
+    <Compile Include="Articulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarArticulo.Designer.cs">
-      <DependentUpon>AgregarArticulo.cs</DependentUpon>
+    <Compile Include="Articulo.Designer.cs">
+      <DependentUpon>Articulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
+    <Compile Include="M5PDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M5PDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="M5PDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M5PDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="M5PDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M5PDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ObjArticulo.cs" />
     <Compile Include="ObjVenta.cs" />
     <Compile Include="Obtener.cs" />
+    <Compile Include="QueryArticulo.cs" />
+    <Compile Include="QueryVenta.cs" />
     <Compile Include="Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,12 +98,6 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModificarArticulo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModificarArticulo.Designer.cs">
-      <DependentUpon>ModificarArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,8 +123,8 @@
     <EmbeddedResource Include="AdminUI.resx">
       <DependentUpon>AdminUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarArticulo.resx">
-      <DependentUpon>AgregarArticulo.cs</DependentUpon>
+    <EmbeddedResource Include="Articulo.resx">
+      <DependentUpon>Articulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
@@ -123,9 +134,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModificarArticulo.resx">
-      <DependentUpon>ModificarArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,6 +149,39 @@
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="M5PDBDataSet.xsc">
+      <DependentUpon>M5PDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="M5PDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>M5PDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="M5PDBDataSet.xss">
+      <DependentUpon>M5PDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="M5PDBDataSet1.xsc">
+      <DependentUpon>M5PDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="M5PDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>M5PDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="M5PDBDataSet1.xss">
+      <DependentUpon>M5PDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="M5PDBDataSet2.xsc">
+      <DependentUpon>M5PDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="M5PDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>M5PDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="M5PDBDataSet2.xss">
+      <DependentUpon>M5PDBDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
