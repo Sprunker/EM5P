@@ -65,7 +65,7 @@ namespace El_Mundo_de_5_Peso
         private void BT_Opciones_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Usuario modUser = new Usuario("modificar"); // TODO: Enviar datos de usuario actual
+            Usuario modUser = new Usuario("modificar", 1); // TODO: Enviar datos de usuario actual
             modUser.ShowDialog();
             this.Visible = true;
         }

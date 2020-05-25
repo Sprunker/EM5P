@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Ventas = new System.Windows.Forms.DataGridView();
-            this.NumVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalles = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TB_Fecha = new System.Windows.Forms.TextBox();
             this.TB_Usuario = new System.Windows.Forms.TextBox();
             this.BT_Buscar = new System.Windows.Forms.Button();
@@ -51,9 +43,22 @@
             this.BT_MinimizeWindow = new System.Windows.Forms.PictureBox();
             this.BT_CloseWindow = new System.Windows.Forms.PictureBox();
             this.BT_CancelarVenta = new System.Windows.Forms.Button();
+            this.m5PDBDataSet2 = new El_Mundo_de_5_Peso.M5PDBDataSet2();
+            this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ventaTableAdapter = new El_Mundo_de_5_Peso.M5PDBDataSet2TableAdapters.VentaTableAdapter();
+            this.numVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.articulosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m5PDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,6 +75,7 @@
             // 
             // DGV_Ventas
             // 
+            this.DGV_Ventas.AutoGenerateColumns = false;
             this.DGV_Ventas.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -81,86 +87,20 @@
             this.DGV_Ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Ventas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NumVenta,
-            this.Usuario,
-            this.Productos,
-            this.Cantidad,
-            this.Total,
-            this.Fecha,
-            this.Hora,
-            this.Detalles});
+            this.numVentaDataGridViewTextBoxColumn,
+            this.usuarioDataGridViewTextBoxColumn,
+            this.articulosDataGridViewTextBoxColumn,
+            this.cantidadDataGridViewTextBoxColumn,
+            this.totalDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.horaDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn});
+            this.DGV_Ventas.DataSource = this.ventaBindingSource;
             this.DGV_Ventas.GridColor = System.Drawing.Color.CornflowerBlue;
             this.DGV_Ventas.Location = new System.Drawing.Point(22, 111);
             this.DGV_Ventas.Name = "DGV_Ventas";
             this.DGV_Ventas.Size = new System.Drawing.Size(754, 409);
             this.DGV_Ventas.TabIndex = 13;
-            // 
-            // NumVenta
-            // 
-            this.NumVenta.HeaderText = "Número Venta";
-            this.NumVenta.Name = "NumVenta";
-            this.NumVenta.ReadOnly = true;
-            this.NumVenta.Width = 80;
-            // 
-            // Usuario
-            // 
-            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 98;
-            // 
-            // Productos
-            // 
-            this.Productos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Productos.HeaderText = "Artículos";
-            this.Productos.Name = "Productos";
-            this.Productos.ReadOnly = true;
-            this.Productos.Width = 107;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 87;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 80;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 90;
-            // 
-            // Hora
-            // 
-            this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Hora.HeaderText = "Hora";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
-            // 
-            // Detalles
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Maiandra GD", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.Detalles.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Detalles.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Detalles.HeaderText = "Detalles";
-            this.Detalles.Name = "Detalles";
-            this.Detalles.ReadOnly = true;
-            this.Detalles.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Detalles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Detalles.Text = "Abrir";
-            this.Detalles.UseColumnTextForButtonValue = true;
-            this.Detalles.Width = 80;
             // 
             // TB_Fecha
             // 
@@ -283,6 +223,77 @@
             this.BT_CancelarVenta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BT_CancelarVenta.UseVisualStyleBackColor = false;
             // 
+            // m5PDBDataSet2
+            // 
+            this.m5PDBDataSet2.DataSetName = "M5PDBDataSet2";
+            this.m5PDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ventaBindingSource
+            // 
+            this.ventaBindingSource.DataMember = "Venta";
+            this.ventaBindingSource.DataSource = this.m5PDBDataSet2;
+            // 
+            // ventaTableAdapter
+            // 
+            this.ventaTableAdapter.ClearBeforeFill = true;
+            // 
+            // numVentaDataGridViewTextBoxColumn
+            // 
+            this.numVentaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numVentaDataGridViewTextBoxColumn.DataPropertyName = "numVenta";
+            this.numVentaDataGridViewTextBoxColumn.HeaderText = "Número Venta";
+            this.numVentaDataGridViewTextBoxColumn.Name = "numVentaDataGridViewTextBoxColumn";
+            this.numVentaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            // 
+            // articulosDataGridViewTextBoxColumn
+            // 
+            this.articulosDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.articulosDataGridViewTextBoxColumn.DataPropertyName = "articulos";
+            this.articulosDataGridViewTextBoxColumn.HeaderText = "Artículos";
+            this.articulosDataGridViewTextBoxColumn.Name = "articulosDataGridViewTextBoxColumn";
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
+            // horaDataGridViewTextBoxColumn
+            // 
+            this.horaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.horaDataGridViewTextBoxColumn.DataPropertyName = "hora";
+            this.horaDataGridViewTextBoxColumn.HeaderText = "Hora";
+            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,6 +321,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Ventas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m5PDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,14 +341,17 @@
         private System.Windows.Forms.Button BT_ModVenta;
         private System.Windows.Forms.PictureBox BT_MinimizeWindow;
         private System.Windows.Forms.PictureBox BT_CloseWindow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
-        private System.Windows.Forms.DataGridViewButtonColumn Detalles;
         private System.Windows.Forms.Button BT_CancelarVenta;
+        private M5PDBDataSet2 m5PDBDataSet2;
+        private System.Windows.Forms.BindingSource ventaBindingSource;
+        private M5PDBDataSet2TableAdapters.VentaTableAdapter ventaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numVentaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn articulosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
     }
 }

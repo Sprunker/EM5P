@@ -27,5 +27,15 @@ namespace El_Mundo_de_5_Peso
             this.diasLab = diasLab;
             this.horario = horario;
         }
+
+        public ObjUsuario(ObjUsuario usuario)
+        {
+            this.nombre = usuario.nombre;
+            this.usuario = usuario.usuario;
+            this.pass = usuario.pass;
+            this.telefono = usuario.telefono;
+            this.diasLab = usuario.diasLab;
+            this.horario = usuario.horario;
+        }
     }
 }

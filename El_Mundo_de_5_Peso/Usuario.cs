@@ -13,8 +13,10 @@ namespace El_Mundo_de_5_Peso
     public partial class Usuario : Form
     {
         string mod;
+        int idUser;
+        bool E = true;
 
-        public Usuario(string mod)
+        public Usuario(string mod, int idUser)
         {
             InitializeComponent();
             this.mod = mod; 
@@ -36,17 +38,63 @@ namespace El_Mundo_de_5_Peso
                 BT_AgrUser.Text = "Guardar Datos";
 
                 BT_AgrUser.Click += new System.EventHandler(BT_ModUser_Click);
+
+                this.idUser = idUser;
+
+                if (idUser != 0)
+                {
+                    Obtener obtener = new Obtener();
+                    List<ObjUsuario> list = obtener.ObtenerLU();
+                    ObjUsuario usuario = new ObjUsuario();
+
+                    try
+                    {
+                        for (int i = 1; i < list.Count; i++)
+                        {
+                            if (list[i].id == idUser)
+                                usuario = new ObjUsuario(list[i]);
+                        }
+
+                        TB_Nombre.Text = usuario.nombre;
+                        TB_User.Text = usuario.usuario;
+                        TB_Pass.Text = usuario.pass;
+                        TB_RepPass.Text = usuario.pass;
+                        TB_Telefono.Text = usuario.telefono;
+                        if (usuario.diasLab == true)
+                        {
+                            TB_DiasLab.Text = "Entre Semana";
+                        }
+                        else
+                        {
+                            TB_DiasLab.Text = "Fines de Semana";
+                        }
+                        if (usuario.horario == true)
+                        {
+                            TB_Horario.Text = "Matutino";
+                        }
+                        else
+                        {
+                            TB_Horario.Text = "Vespertino";
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No se encontró el usuario");
+
+                        E = false;
+                    }
+                }
             }
         }
 
         private void BT_AgrUser_Click(object sender, EventArgs e)
         {
-            Verificacion("agregar");
+            Verificacion(mod);
         }
 
         private void BT_ModUser_Click(object sender, EventArgs e)
         {
-            Verificacion("modificar");
+            Verificacion(mod);
         }
 
         public void Verificacion(string instruccion)
@@ -55,82 +103,87 @@ namespace El_Mundo_de_5_Peso
             bool DL = true;
             bool H = true;
             
-            // Verificaciones de campos llenos //
-            if (TB_Nombre.Text == "Nombre" || TB_Nombre.Text == "" || TB_User.Text == "Usuario" || TB_User.Text == "" || TB_Pass.Text == "Contraseña" ||
-                TB_Pass.Text == "" || TB_RepPass.Text == "Repetir Contraseña" || TB_RepPass.Text == "" || TB_Telefono.Text == "Teléfono" || TB_Telefono.Text == "" ||
-                TB_DiasLab.Text == "Días Laborales" || TB_Horario.Text == "Horario" || TB_Nombre.Text == "*Campo Obligatorio*" || TB_User.Text == "*Campo Obligatorio*" ||
-                TB_Pass.Text == "*Campo Obligatorio*" || TB_RepPass.Text == "*Campo Obligatorio*" || TB_Telefono.Text == "*Campo Obligatorio*" ||
-                TB_DiasLab.Text == "*Campo Obligatorio*" || TB_Horario.Text == "*Campo Obligatorio*")
+            if (E)
             {
-                if (TB_Nombre.Text == "Nombre" || TB_Nombre.Text == "" || TB_Nombre.Text == "*Campo Obligatorio*")
+                // Verificaciones de campos llenos //
+                if (TB_Nombre.Text == "Nombre" || TB_Nombre.Text == "" || TB_User.Text == "Usuario" || TB_User.Text == "" || TB_Pass.Text == "Contraseña" ||
+                    TB_Pass.Text == "" || TB_RepPass.Text == "Repetir Contraseña" || TB_RepPass.Text == "" || TB_Telefono.Text == "Teléfono" || TB_Telefono.Text == "" ||
+                    TB_DiasLab.Text == "Días Laborales" || TB_Horario.Text == "Horario" || TB_Nombre.Text == "*Campo Obligatorio*" || TB_User.Text == "*Campo Obligatorio*" ||
+                    TB_Pass.Text == "*Campo Obligatorio*" || TB_RepPass.Text == "*Campo Obligatorio*" || TB_Telefono.Text == "*Campo Obligatorio*" ||
+                    TB_DiasLab.Text == "*Campo Obligatorio*" || TB_Horario.Text == "*Campo Obligatorio*")
                 {
-                    TB_Nombre.ForeColor = Color.Red;
-                    TB_Nombre.Text = "*Campo Obligatorio*";
-                }
-                if (TB_User.Text == "Usuario" || TB_User.Text == "" || TB_User.Text == "*Campo Obligatorio*")
-                {
-                    TB_User.ForeColor = Color.Red;
-                    TB_User.Text = "*Campo Obligatorio*";
-                }
-                if (TB_Pass.Text == "Contraseña" || TB_Pass.Text == "" || TB_Pass.Text == "*Campo Obligatorio*")
-                {
-                    TB_Pass.ForeColor = Color.Red;
-                    TB_Pass.Text = "*Campo Obligatorio*";
-                }
-                if (TB_RepPass.Text == "Repetir Contraseña" || TB_RepPass.Text == "" || TB_RepPass.Text == "*Campo Obligatorio*")
-                {
-                    TB_RepPass.ForeColor = Color.Red;
-                    TB_RepPass.Text = "*Campo Obligatorio*";
-                }
-                if (TB_Telefono.Text == "Teléfono" || TB_Telefono.Text == "" || TB_Telefono.Text == "*Campo Obligatorio*")
-                {
-                    TB_Telefono.ForeColor = Color.Red;
-                    TB_Telefono.Text = "*Campo Obligatorio*";
-                }
-                if (TB_DiasLab.Text == "Días Laborales" || TB_DiasLab.Text == "*Campo Obligatorio*")
-                {
-                    TB_DiasLab.ForeColor = Color.Red;
-                    TB_DiasLab.Text = "*Campo Obligatorio*";
-                }
-                if (TB_Horario.Text == "Horario" || TB_Horario.Text == "*Campo Obligatorio*")
-                {
-                    TB_Horario.ForeColor = Color.Red;
-                    TB_Horario.Text = "*Campo Obligatorio*";
+                    if (TB_Nombre.Text == "Nombre" || TB_Nombre.Text == "" || TB_Nombre.Text == "*Campo Obligatorio*")
+                    {
+                        TB_Nombre.ForeColor = Color.Red;
+                        TB_Nombre.Text = "*Campo Obligatorio*";
+                    }
+                    if (TB_User.Text == "Usuario" || TB_User.Text == "" || TB_User.Text == "*Campo Obligatorio*")
+                    {
+                        TB_User.ForeColor = Color.Red;
+                        TB_User.Text = "*Campo Obligatorio*";
+                    }
+                    if (TB_Pass.Text == "Contraseña" || TB_Pass.Text == "" || TB_Pass.Text == "*Campo Obligatorio*")
+                    {
+                        TB_Pass.ForeColor = Color.Red;
+                        TB_Pass.Text = "*Campo Obligatorio*";
+                    }
+                    if (TB_RepPass.Text == "Repetir Contraseña" || TB_RepPass.Text == "" || TB_RepPass.Text == "*Campo Obligatorio*")
+                    {
+                        TB_RepPass.ForeColor = Color.Red;
+                        TB_RepPass.Text = "*Campo Obligatorio*";
+                    }
+                    if (TB_Telefono.Text == "Teléfono" || TB_Telefono.Text == "" || TB_Telefono.Text == "*Campo Obligatorio*")
+                    {
+                        TB_Telefono.ForeColor = Color.Red;
+                        TB_Telefono.Text = "*Campo Obligatorio*";
+                    }
+                    if (TB_DiasLab.Text == "Días Laborales" || TB_DiasLab.Text == "*Campo Obligatorio*")
+                    {
+                        TB_DiasLab.ForeColor = Color.Red;
+                        TB_DiasLab.Text = "*Campo Obligatorio*";
+                    }
+                    if (TB_Horario.Text == "Horario" || TB_Horario.Text == "*Campo Obligatorio*")
+                    {
+                        TB_Horario.ForeColor = Color.Red;
+                        TB_Horario.Text = "*Campo Obligatorio*";
+                    }
+
+                    MessageBox.Show("Datos Incompletos");
+
+                    DC = false;
                 }
 
-                MessageBox.Show("Datos Incompletos");
-
-                DC = false;
-            }
-            
-            if (DC)
-            {
-                
-                if (TB_DiasLab.Text == "Fines de Semana")
+                if (DC)
                 {
-                    DL = false;
+
+                    if (TB_DiasLab.Text == "Fines de Semana")
+                    {
+                        DL = false;
+                    }
+                    if (TB_Horario.Text == "Vespertino")
+                    {
+                        H = false;
+                    }
                 }
-                if (TB_Horario.Text == "Vespertino")
+
+                // Fin de verificaciones de campos llenos //
+
+                // Verificacion de formatos de datos //
+
+                // Fin de verificaciones de formatos de datos //
+
+                if (TB_Pass.Text == TB_RepPass.Text) // Verificación de contraseñas //
                 {
-                    H = false;
+                    ObjUsuario usuario = new ObjUsuario(TB_Nombre.Text, TB_User.Text, TB_Pass.Text, TB_Telefono.Text, DL, H); // Creación del usuario //
+
+                    QueryUsuario agregar = new QueryUsuario(instruccion, usuario); // Query para agregar nuevo usuario //
                 }
-            }
+                else
+                {
+                    MessageBox.Show("Las contraseñas no coinciden");
+                }
 
-            // Fin de verificaciones de campos llenos //
-
-            // Verificacion de formatos de datos //
-
-            // Fin de verificaciones de formatos de datos //
-
-            if (TB_Pass.Text == TB_RepPass.Text) // Verificación de contraseñas //
-            {
-                ObjUsuario usuario = new ObjUsuario(TB_Nombre.Text, TB_User.Text, TB_Pass.Text, TB_Telefono.Text, DL, H); // Creación del usuario //
-
-                QueryUsuario agregar = new QueryUsuario(instruccion, usuario); // Query para agregar nuevo usuario //
-            }
-            else
-            {
-                MessageBox.Show("Las contraseñas no coinciden");
+                this.Close();
             }
         }
 

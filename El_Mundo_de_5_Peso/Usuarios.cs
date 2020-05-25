@@ -16,23 +16,16 @@ namespace El_Mundo_de_5_Peso
     {
         public Usuarios()
         {
-            InitializeComponent(); 
-            
-            Conexion cn = new Conexion();
-            cn.Open();
+            InitializeComponent();
 
-            string query = "SELECT * FROM Usuario";
-            SqlCommand comando = new SqlCommand(query, cn.conexion);
-            SqlDataAdapter data = new SqlDataAdapter(comando);
-            DataTable table = new DataTable();
-            data.Fill(table);
-
-            DGV_Usuarios.DataSource = table;
+            DGV_Usuarios.AllowUserToAddRows = false;
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
-            
+            // TODO: esta línea de código carga datos en la tabla 'm5PDBDataSet.Usuario' Puede moverla o quitarla según sea necesario.
+            this.usuarioTableAdapter.Fill(this.m5PDBDataSet.Usuario);
+
         }
 
         private void BT_CloseWindow_Click(object sender, EventArgs e)
@@ -50,54 +43,99 @@ namespace El_Mundo_de_5_Peso
         private void BT_AgrUser_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Usuario agrUser = new Usuario("agregar");
+            Usuario agrUser = new Usuario("agregar", 0);
             agrUser.ShowDialog();
-            this.Visible = true;
+            this.Visible = true; 
+            DGV_Usuarios.Refresh();
         }
 
         private void BT_ModUser_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            Usuario modUser = new Usuario("modificar");
-            modUser.ShowDialog();
-            this.Visible = true;
-        }
-
-        private void BT_BorUser_Click(object sender, EventArgs e) // TODO: Verificar que funcione
-        {
-            int id = 2;
-            bool ok = false;
-            // TODO: Verificar que haya seleccionado un usuario //
-
-            try
+            if (TB_CodigoUser.Text != "Código" || TB_Nombre.Text != "Nombre" || TB_Usuario.Text != "Usuario")
             {
-                string cnn = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
-                using (SqlConnection conexion = new SqlConnection(cnn))
+                int id = 0;
+
+                try
                 {
+                    id = Convert.ToInt32(TB_CodigoUser.Text);
+
                     Obtener obtener = new Obtener();
                     List<ObjUsuario> list = obtener.ObtenerLU();
 
                     foreach(ObjUsuario usuario in list)
                     {
-                        if(usuario.id == id)
+                        if(id == usuario.id)
                         {
-                            SqlCommand cmd = new SqlCommand("DELETE Usuario where id = " + usuario.id, conexion);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Se ha eliminado el usuario " + usuario.usuario);
-
-                            QueryUsuario query = new QueryUsuario("eliminar", usuario);
+                            this.Visible = false;
+                            Usuario modUser = new Usuario("modificar", id);
+                            modUser.ShowDialog();
+                            this.Visible = true;
+                            DGV_Usuarios.Refresh();
                         }
                     }
-                    
-                    if(!ok)
-                    {
-                        MessageBox.Show("No se encontró el usuario");
-                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Ingrese un caracter válido");
                 }
             }
-            catch(Exception ex)
+        }
+
+        private void BT_BorUser_Click(object sender, EventArgs e) // TODO: Verificar que funcione
+        {
+            if (TB_CodigoUser.Text != "Código" || TB_Nombre.Text != "Nombre" || TB_Usuario.Text != "Usuario")
             {
-                MessageBox.Show(ex.ToString());
+                int id = 0;
+
+                try
+                {
+                    id = Convert.ToInt32(TB_CodigoUser.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Ingrese un caracter válido");
+                }
+                bool ok = false;
+                // TODO: Verificar que haya seleccionado un usuario //
+
+                try
+                {
+                    string cnn = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
+                    using (SqlConnection conexion = new SqlConnection(cnn))
+                    {
+                        conexion.Open();
+
+                        Obtener obtener = new Obtener();
+                        List<ObjUsuario> list = obtener.ObtenerLU();
+
+                        foreach (ObjUsuario usuario in list)
+                        {
+                            if (usuario.id == id)
+                            {
+                                SqlCommand cmd = new SqlCommand("DELETE Usuario where id = " + usuario.id, conexion);
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("Se ha eliminado el usuario " + usuario.usuario);
+
+                                QueryUsuario query = new QueryUsuario("eliminar", usuario);
+
+                                DGV_Usuarios.Refresh();
+                            }
+                        }
+
+                        if (!ok)
+                        {
+                            MessageBox.Show("No se encontró el usuario");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                } 
+            }
+            else
+            {
+                MessageBox.Show("Ingrese datos para la eliminación");
             }
         }
 

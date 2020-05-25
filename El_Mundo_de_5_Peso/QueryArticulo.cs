@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace El_Mundo_de_5_Peso
 {
-    public class QueryUsuario
+    class QueryArticulo
     {
-        public QueryUsuario(string comando, ObjUsuario usuario)
+        public QueryArticulo(string comando, ObjArticulo articulo)
         {
             try
             {
@@ -23,21 +23,20 @@ namespace El_Mundo_de_5_Peso
                     {
                         case "agregar":
                             {
-                                SqlCommand cmd = new SqlCommand("INSERT INTO Usuario(nombre, usuario, pass, telefono, diasLab, horario)" +
-                                    "VALUES ('"+usuario.nombre+"', '"+usuario.usuario+"', '"+usuario.pass+"', '"+usuario.telefono+"'," +
-                                    "'"+usuario.diasLab+"', '"+usuario.horario+"')", conexion);
+                                SqlCommand cmd = new SqlCommand("INSERT INTO Articulo(nombre, cantidad, precio, detalles, imagen)" +
+                                    "VALUES ('" + articulo.nombre + "', '" + articulo.cantidad + "', '" + articulo.precio + "', '" + articulo.detalles + "'," +
+                                    "'" + articulo.imagen + "')", conexion);
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Se ha agregado el usuario " + usuario.usuario);
+                                MessageBox.Show("Se ha agregado el articulo " + articulo.nombre);
                             }
                             break;
 
                         case "modificar":
                             {
-                                SqlCommand cmd = new SqlCommand("UPDATE Usuario SET nombre = '"+usuario.nombre+"', usuario = '"+usuario.usuario+"'," +
-                                    " pass = '"+usuario.pass+"', telefono = '"+usuario.telefono+"', diasLab = '"+usuario.diasLab+"'," +
-                                    " horario = '"+usuario.horario+ "' WHERE id = " + usuario.id + "", conexion);
+                                SqlCommand cmd = new SqlCommand("UPDATE Articulo SET nombre = '" + articulo.nombre + "', cantidad = '" + articulo.cantidad + "'," +
+                                    " precio = '" + articulo.precio + "', detalles = '" + articulo.detalles + "', imagen = '" + articulo.imagen, conexion);
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Se ha modificado el usuario " + usuario.usuario);
+                                MessageBox.Show("Se ha modificado el articulo " + articulo.nombre);
                             }
                             break;
                     }

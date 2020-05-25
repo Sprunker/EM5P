@@ -30,11 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarArticulo));
             this.TB_Nombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LB_Titulo = new System.Windows.Forms.Label();
             this.LB_Imagen = new System.Windows.Forms.Label();
             this.PB_Imagen = new System.Windows.Forms.PictureBox();
             this.TB_Descripcion = new System.Windows.Forms.TextBox();
-            this.TB_Codigo = new System.Windows.Forms.TextBox();
             this.NUD_Cantidad = new System.Windows.Forms.NumericUpDown();
             this.NUD_Precio = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,23 +53,24 @@
             // TB_Nombre
             // 
             this.TB_Nombre.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Nombre.Location = new System.Drawing.Point(23, 108);
+            this.TB_Nombre.Location = new System.Drawing.Point(23, 75);
             this.TB_Nombre.Name = "TB_Nombre";
             this.TB_Nombre.Size = new System.Drawing.Size(340, 27);
             this.TB_Nombre.TabIndex = 1;
             this.TB_Nombre.Text = "Nombre";
+            this.TB_Nombre.Click += new System.EventHandler(this.TB_Nombre_Click);
             // 
-            // label1
+            // LB_Titulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Maiandra GD", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 37);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "ARTICULO NUEVO";
+            this.LB_Titulo.AutoSize = true;
+            this.LB_Titulo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.LB_Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LB_Titulo.Font = new System.Drawing.Font("Maiandra GD", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Titulo.Location = new System.Drawing.Point(160, 16);
+            this.LB_Titulo.Name = "LB_Titulo";
+            this.LB_Titulo.Size = new System.Drawing.Size(286, 37);
+            this.LB_Titulo.TabIndex = 7;
+            this.LB_Titulo.Text = "ARTICULO NUEVO";
             // 
             // LB_Imagen
             // 
@@ -100,21 +100,12 @@
             // TB_Descripcion
             // 
             this.TB_Descripcion.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Descripcion.Location = new System.Drawing.Point(23, 141);
+            this.TB_Descripcion.Location = new System.Drawing.Point(23, 108);
             this.TB_Descripcion.Multiline = true;
             this.TB_Descripcion.Name = "TB_Descripcion";
-            this.TB_Descripcion.Size = new System.Drawing.Size(340, 122);
+            this.TB_Descripcion.Size = new System.Drawing.Size(340, 155);
             this.TB_Descripcion.TabIndex = 12;
             this.TB_Descripcion.Text = "Descripción";
-            // 
-            // TB_Codigo
-            // 
-            this.TB_Codigo.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Codigo.Location = new System.Drawing.Point(23, 75);
-            this.TB_Codigo.Name = "TB_Codigo";
-            this.TB_Codigo.Size = new System.Drawing.Size(340, 27);
-            this.TB_Codigo.TabIndex = 13;
-            this.TB_Codigo.Text = "Código";
             // 
             // NUD_Cantidad
             // 
@@ -134,6 +125,7 @@
             this.NUD_Precio.Size = new System.Drawing.Size(84, 27);
             this.NUD_Precio.TabIndex = 15;
             this.NUD_Precio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NUD_Precio.ValueChanged += new System.EventHandler(this.NUD_Precio_ValueChanged);
             // 
             // label3
             // 
@@ -172,6 +164,7 @@
             this.BT_AgrArt.Text = "Agregar Artículo";
             this.BT_AgrArt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BT_AgrArt.UseVisualStyleBackColor = false;
+            this.BT_AgrArt.Click += new System.EventHandler(this.BT_AgrArt_Click);
             // 
             // BT_LimpDatos
             // 
@@ -227,15 +220,15 @@
             this.Controls.Add(this.NUD_Cantidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.NUD_Precio);
-            this.Controls.Add(this.TB_Codigo);
             this.Controls.Add(this.TB_Descripcion);
             this.Controls.Add(this.LB_Imagen);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LB_Titulo);
             this.Controls.Add(this.PB_Imagen);
             this.Controls.Add(this.TB_Nombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarArticulo";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.AgregarArticulo_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AgregarArticulo_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.PB_Imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Cantidad)).EndInit();
@@ -249,11 +242,10 @@
 
         #endregion
         private System.Windows.Forms.TextBox TB_Nombre;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LB_Titulo;
         private System.Windows.Forms.Label LB_Imagen;
         private System.Windows.Forms.PictureBox PB_Imagen;
         private System.Windows.Forms.TextBox TB_Descripcion;
-        private System.Windows.Forms.TextBox TB_Codigo;
         private System.Windows.Forms.NumericUpDown NUD_Cantidad;
         private System.Windows.Forms.NumericUpDown NUD_Precio;
         private System.Windows.Forms.Label label3;

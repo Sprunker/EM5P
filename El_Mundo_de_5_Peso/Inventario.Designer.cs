@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventario));
             this.label1 = new System.Windows.Forms.Label();
@@ -44,15 +45,20 @@
             this.TB_CantidadAgr = new System.Windows.Forms.TextBox();
             this.BT_MinimizeWindow = new System.Windows.Forms.PictureBox();
             this.BT_CloseWindow = new System.Windows.Forms.PictureBox();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Imagen = new System.Windows.Forms.DataGridViewImageColumn();
+            this.m5PDBDataSet1 = new El_Mundo_de_5_Peso.M5PDBDataSet1();
+            this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.articuloTableAdapter = new El_Mundo_de_5_Peso.M5PDBDataSet1TableAdapters.ArticuloTableAdapter();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detallesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Inventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m5PDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,6 +75,7 @@
             // 
             // DGV_Inventario
             // 
+            this.DGV_Inventario.AutoGenerateColumns = false;
             this.DGV_Inventario.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -80,12 +87,13 @@
             this.DGV_Inventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Inventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Inventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.Nombre,
-            this.Cantidad,
-            this.PrecioU,
-            this.Detalles,
-            this.Imagen});
+            this.codigoDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.cantidadDataGridViewTextBoxColumn,
+            this.precioDataGridViewTextBoxColumn,
+            this.detallesDataGridViewTextBoxColumn,
+            this.imagenDataGridViewTextBoxColumn});
+            this.DGV_Inventario.DataSource = this.articuloBindingSource;
             this.DGV_Inventario.GridColor = System.Drawing.Color.CornflowerBlue;
             this.DGV_Inventario.Location = new System.Drawing.Point(23, 109);
             this.DGV_Inventario.Name = "DGV_Inventario";
@@ -238,52 +246,62 @@
             this.BT_CloseWindow.TabStop = false;
             this.BT_CloseWindow.Click += new System.EventHandler(this.BT_CloseWindow_Click);
             // 
-            // Codigo
+            // m5PDBDataSet1
             // 
-            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Codigo.HeaderText = "Código Art.";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 132;
+            this.m5PDBDataSet1.DataSetName = "M5PDBDataSet1";
+            this.m5PDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Nombre
+            // articuloBindingSource
             // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.articuloBindingSource.DataMember = "Articulo";
+            this.articuloBindingSource.DataSource = this.m5PDBDataSet1;
             // 
-            // Cantidad
+            // articuloTableAdapter
             // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 109;
+            this.articuloTableAdapter.ClearBeforeFill = true;
             // 
-            // PrecioU
+            // codigoDataGridViewTextBoxColumn
             // 
-            this.PrecioU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PrecioU.HeaderText = "Precio Unitario";
-            this.PrecioU.Name = "PrecioU";
-            this.PrecioU.ReadOnly = true;
-            this.PrecioU.Width = 157;
+            this.codigoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Código Art.";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Detalles
+            // nombreDataGridViewTextBoxColumn
             // 
-            this.Detalles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Detalles.HeaderText = "Detalles";
-            this.Detalles.Name = "Detalles";
-            this.Detalles.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             // 
-            // Imagen
+            // cantidadDataGridViewTextBoxColumn
             // 
-            this.Imagen.HeaderText = "Imagen";
-            this.Imagen.Name = "Imagen";
-            this.Imagen.ReadOnly = true;
-            this.Imagen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Imagen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Imagen.Width = 150;
+            this.cantidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            // 
+            // detallesDataGridViewTextBoxColumn
+            // 
+            this.detallesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.detallesDataGridViewTextBoxColumn.DataPropertyName = "detalles";
+            this.detallesDataGridViewTextBoxColumn.HeaderText = "Detalles";
+            this.detallesDataGridViewTextBoxColumn.Name = "detallesDataGridViewTextBoxColumn";
+            // 
+            // imagenDataGridViewTextBoxColumn
+            // 
+            this.imagenDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.imagenDataGridViewTextBoxColumn.DataPropertyName = "imagen";
+            this.imagenDataGridViewTextBoxColumn.HeaderText = "Imagen";
+            this.imagenDataGridViewTextBoxColumn.Name = "imagenDataGridViewTextBoxColumn";
             // 
             // Inventario
             // 
@@ -309,10 +327,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Inventario";
             this.Text = "Inventario";
+            this.Load += new System.EventHandler(this.Inventario_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Inventario_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Inventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m5PDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,11 +355,14 @@
         private System.Windows.Forms.TextBox TB_CantidadAgr;
         private System.Windows.Forms.PictureBox BT_MinimizeWindow;
         private System.Windows.Forms.PictureBox BT_CloseWindow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Detalles;
-        private System.Windows.Forms.DataGridViewImageColumn Imagen;
+        private M5PDBDataSet1 m5PDBDataSet1;
+        private System.Windows.Forms.BindingSource articuloBindingSource;
+        private M5PDBDataSet1TableAdapters.ArticuloTableAdapter articuloTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detallesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imagenDataGridViewTextBoxColumn;
     }
 }

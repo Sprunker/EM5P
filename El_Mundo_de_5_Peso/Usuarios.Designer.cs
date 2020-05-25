@@ -28,19 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.DGV_Usuarios = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiasLaborales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TB_Nombre = new System.Windows.Forms.TextBox();
             this.TB_CodigoUser = new System.Windows.Forms.TextBox();
             this.TB_Usuario = new System.Windows.Forms.TextBox();
@@ -50,9 +41,22 @@
             this.BT_ModUser = new System.Windows.Forms.Button();
             this.BT_MinimizeWindow = new System.Windows.Forms.PictureBox();
             this.BT_CloseWindow = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Usuarios)).BeginInit();
+            this.DGV_Usuarios = new System.Windows.Forms.DataGridView();
+            this.m5PDBDataSet = new El_Mundo_de_5_Peso.M5PDBDataSet();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioTableAdapter = new El_Mundo_de_5_Peso.M5PDBDataSetTableAdapters.UsuarioTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diasLabDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.horarioDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m5PDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,80 +70,6 @@
             this.label1.Size = new System.Drawing.Size(301, 37);
             this.label1.TabIndex = 11;
             this.label1.Text = "LISTA DE USUARIOS";
-            // 
-            // DGV_Usuarios
-            // 
-            this.DGV_Usuarios.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Maiandra GD", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DGV_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.Nombre,
-            this.Usuario,
-            this.DiasLaborales,
-            this.Horario,
-            this.NumTelefono});
-            this.DGV_Usuarios.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.DGV_Usuarios.Location = new System.Drawing.Point(22, 111);
-            this.DGV_Usuarios.Name = "DGV_Usuarios";
-            this.DGV_Usuarios.Size = new System.Drawing.Size(754, 409);
-            this.DGV_Usuarios.TabIndex = 12;
-            // 
-            // Codigo
-            // 
-            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Codigo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 95;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nombre.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 218;
-            // 
-            // Usuario
-            // 
-            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Usuario.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 98;
-            // 
-            // DiasLaborales
-            // 
-            this.DiasLaborales.HeaderText = "Dias Laborales";
-            this.DiasLaborales.Name = "DiasLaborales";
-            this.DiasLaborales.ReadOnly = true;
-            // 
-            // Horario
-            // 
-            this.Horario.HeaderText = "Horario";
-            this.Horario.Name = "Horario";
-            this.Horario.ReadOnly = true;
-            // 
-            // NumTelefono
-            // 
-            this.NumTelefono.HeaderText = "Número Telefónico";
-            this.NumTelefono.Name = "NumTelefono";
-            this.NumTelefono.ReadOnly = true;
-            this.NumTelefono.Width = 101;
             // 
             // TB_Nombre
             // 
@@ -254,6 +184,92 @@
             this.BT_CloseWindow.TabStop = false;
             this.BT_CloseWindow.Click += new System.EventHandler(this.BT_CloseWindow_Click);
             // 
+            // DGV_Usuarios
+            // 
+            this.DGV_Usuarios.AutoGenerateColumns = false;
+            this.DGV_Usuarios.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Maiandra GD", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.usuarioDataGridViewTextBoxColumn,
+            this.passDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.diasLabDataGridViewCheckBoxColumn,
+            this.horarioDataGridViewCheckBoxColumn});
+            this.DGV_Usuarios.DataSource = this.usuarioBindingSource;
+            this.DGV_Usuarios.GridColor = System.Drawing.Color.CornflowerBlue;
+            this.DGV_Usuarios.Location = new System.Drawing.Point(22, 111);
+            this.DGV_Usuarios.Name = "DGV_Usuarios";
+            this.DGV_Usuarios.Size = new System.Drawing.Size(754, 409);
+            this.DGV_Usuarios.TabIndex = 12;
+            // 
+            // m5PDBDataSet
+            // 
+            this.m5PDBDataSet.DataSetName = "M5PDBDataSet";
+            this.m5PDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataMember = "Usuario";
+            this.usuarioBindingSource.DataSource = this.m5PDBDataSet;
+            // 
+            // usuarioTableAdapter
+            // 
+            this.usuarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            // 
+            // passDataGridViewTextBoxColumn
+            // 
+            this.passDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.passDataGridViewTextBoxColumn.DataPropertyName = "pass";
+            this.passDataGridViewTextBoxColumn.HeaderText = "Contraseña";
+            this.passDataGridViewTextBoxColumn.Name = "passDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // diasLabDataGridViewCheckBoxColumn
+            // 
+            this.diasLabDataGridViewCheckBoxColumn.DataPropertyName = "diasLab";
+            this.diasLabDataGridViewCheckBoxColumn.HeaderText = "Dias Laborales";
+            this.diasLabDataGridViewCheckBoxColumn.Name = "diasLabDataGridViewCheckBoxColumn";
+            // 
+            // horarioDataGridViewCheckBoxColumn
+            // 
+            this.horarioDataGridViewCheckBoxColumn.DataPropertyName = "horario";
+            this.horarioDataGridViewCheckBoxColumn.HeaderText = "Horario";
+            this.horarioDataGridViewCheckBoxColumn.Name = "horarioDataGridViewCheckBoxColumn";
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,9 +293,11 @@
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Usuarios_MouseMove);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Usuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_MinimizeWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BT_CloseWindow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m5PDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +306,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView DGV_Usuarios;
         private System.Windows.Forms.TextBox TB_Nombre;
         private System.Windows.Forms.TextBox TB_CodigoUser;
         private System.Windows.Forms.TextBox TB_Usuario;
@@ -298,11 +315,16 @@
         private System.Windows.Forms.Button BT_ModUser;
         private System.Windows.Forms.PictureBox BT_MinimizeWindow;
         private System.Windows.Forms.PictureBox BT_CloseWindow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiasLaborales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumTelefono;
+        private System.Windows.Forms.DataGridView DGV_Usuarios;
+        private M5PDBDataSet m5PDBDataSet;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
+        private M5PDBDataSetTableAdapters.UsuarioTableAdapter usuarioTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn diasLabDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn horarioDataGridViewCheckBoxColumn;
     }
 }

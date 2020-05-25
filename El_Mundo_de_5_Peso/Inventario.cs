@@ -16,6 +16,8 @@ namespace El_Mundo_de_5_Peso
         public Inventario()
         {
             InitializeComponent();
+
+            DGV_Inventario.AllowUserToAddRows = false;
         }
 
         private void BT_CloseWindow_Click(object sender, EventArgs e)
@@ -33,17 +35,47 @@ namespace El_Mundo_de_5_Peso
         private void BT_AgregarNuevo_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            AgregarArticulo agrArt = new AgregarArticulo();
+            AgregarArticulo agrArt = new AgregarArticulo("agregar", 0);
             agrArt.ShowDialog();
             this.Visible = true;
         }
 
         private void BT_ModArt_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            ModificarArticulo modArt = new ModificarArticulo();
-            modArt.ShowDialog();
-            this.Visible = true;
+            if (TB_CodArtAgr.Text != "Código de Artículo" || TB_NomArtAgr.Text != "Nombre de Artículo")
+            {
+                int id = 0;
+
+                try
+                {
+                    id = Convert.ToInt32(TB_CodArtAgr.Text);
+
+                    Obtener obtener = new Obtener();
+                    List<ObjUsuario> list = obtener.ObtenerLU();
+
+                    foreach (ObjUsuario usuario in list)
+                    {
+                        if (id == usuario.id)
+                        {
+                            this.Visible = false;
+                            AgregarArticulo modArt = new AgregarArticulo("modificar", id);
+                            modArt.ShowDialog();
+                            this.Visible = true;
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Ingrese un caracter válido");
+                }
+            }
+            
+        }
+
+        private void Inventario_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'm5PDBDataSet1.Articulo' Puede moverla o quitarla según sea necesario.
+            this.articuloTableAdapter.Fill(this.m5PDBDataSet1.Articulo);
         }
 
         private void Inventario_MouseMove(object sender, MouseEventArgs e)
