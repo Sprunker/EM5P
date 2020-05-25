@@ -99,12 +99,13 @@ namespace El_Mundo_de_5_Peso
             int cont = 0;
             foreach(ObjArticulo articulo in list2)
             {
-                articulos += "New Line: " + articulo.codigo;
+                articulos += articulo.codigo + Environment.NewLine;
                 cont++;
             }
 
-            ObjVenta venta = new ObjVenta(usuario.nombre, articulos, cont, totalVenta, Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy")), 
-                Convert.ToDateTime(DateTime.Now.ToString("hh:mm")), "Realizada");
+            DateTime now = DateTime.Now;
+
+            ObjVenta venta = new ObjVenta(usuario.nombre, articulos, cont, totalVenta, now, now, "Realizada");
 
             QueryVenta agregar = new QueryVenta(instruccion, venta); // Query para agregar nuevo usuario //
 
