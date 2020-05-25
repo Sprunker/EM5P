@@ -59,6 +59,10 @@
     <Compile Include="AgregarArticulo.Designer.cs">
       <DependentUpon>AgregarArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="ObjArticulo.cs" />
+    <Compile Include="ObjVenta.cs" />
+    <Compile Include="Obtener.cs" />
     <Compile Include="Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
