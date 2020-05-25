@@ -17,6 +17,10 @@ namespace El_Mundo_de_5_Peso
         int idVenta;
         Obtener obtener = new Obtener();
         List<ObjArticulo> list;
+        List<ObjArticulo> list2 = new List<ObjArticulo>();
+        decimal total;
+        decimal totalVenta;
+        bool AC;
 
         public Venta(string mod, int idVenta)
         {
@@ -24,24 +28,25 @@ namespace El_Mundo_de_5_Peso
 
             list = obtener.ObtenerLA();
             this.mod = mod;
+            total = 0;
 
             if (mod == "agregar")
             {
                 // Agregar propiedades //
-                LB_Titulo.Location = new Point(76, 28);
-                LB_Titulo.Text = "NUEVO USUARIO";
-                BT_Agregar.Text = "Agregar Usuario";
+                LB_Titulo.Location = new Point(347, 16);
+                LB_Titulo.Text = "VENTA";
 
-                BT_Agregar.Click += new System.EventHandler(BT_AgrVenta_Click);
+                BT_ReaVenta.Text = "Realizar venta";
+                BT_ReaVenta.Click += new System.EventHandler(BT_AgrVenta_Click);
             }
             else if (mod == "modificar")
             {
                 // Agregar propiedades //
-                LB_Titulo.Location = new Point(40, 34);
-                LB_Titulo.Text = "MODIFICAR USUARIO";
-                BT_Agregar.Text = "Guardar Datos";
+                LB_Titulo.Location = new Point(247, 16);
+                LB_Titulo.Text = "MODIFICAR VENTA";
 
-                BT_Agregar.Click += new System.EventHandler(BT_ModVenta_Click);
+                BT_ReaVenta.Text = "Guardar Datos";
+                BT_ReaVenta.Click += new System.EventHandler(BT_ModVenta_Click);
 
                 this.idVenta = idVenta;
 
@@ -59,7 +64,7 @@ namespace El_Mundo_de_5_Peso
                                 venta = new ObjVenta(list[i]);
                         }
 
-                        // Agregar los daos de la venta
+                        // Agregar los daos de la venta y cambiar el valor de total
                     }
                     catch
                     {
@@ -83,12 +88,26 @@ namespace El_Mundo_de_5_Peso
 
         public void Verificacion(string instruccion)
         {
-            
 
-            ObjUsuario usuario = new ObjUsuario(TB_Nombre.Text, TB_User.Text, TB_Pass.Text, TB_Telefono.Text, DL, H); // Creación del usuario //
+            // NumVenta, Usuario, Articulos, Cantidad, Total, Fecha, Hora, Estado
 
-            QueryUsuario agregar = new QueryUsuario(instruccion, usuario); // Query para agregar nuevo usuario //
-                
+            ObjUsuario usuario = new ObjUsuario();
+            Obtener obtener = new Obtener();
+            List<ObjUsuario> list3 = obtener.ObtenerLU();
+            usuario = list3[2];
+            string articulos = "";
+            int cont = 0;
+            foreach(ObjArticulo articulo in list2)
+            {
+                articulos += "New Line: " + articulo.codigo;
+                cont++;
+            }
+
+            ObjVenta venta = new ObjVenta(usuario.nombre, articulos, cont, totalVenta, Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy")), 
+                Convert.ToDateTime(DateTime.Now.ToString("hh:mm")), "Realizada");
+
+            QueryVenta agregar = new QueryVenta(instruccion, venta); // Query para agregar nuevo usuario //
+
             this.Close();
         }
 
@@ -111,7 +130,68 @@ namespace El_Mundo_de_5_Peso
 
         private void BT_Agregar_Click(object sender, EventArgs e)
         {
+            ObjArticulo articulo1 = new ObjArticulo();
+            total = 0;
+            AC = true;
+            E = false;
 
+            if(TB_CodProd.Text != "Código de Artículo" || TB_NomPro.Text != "Nomdre de Artículo" || TB_CodProd.Text != "" || TB_NomPro.Text != "")
+            {
+                foreach (ObjArticulo articulo in list)
+                {
+                    if (TB_NomPro.Text == articulo.nombre || Convert.ToInt32(TB_CodProd.Text) == articulo.codigo)
+                    {
+                        articulo1 = articulo;
+                        E = true;
+                        break;
+                    }
+                }
+
+                // Codigo Art, Nombre, Cantidad, Precio U, Total
+
+                if (E)
+                {
+                    if (TB_Cantidad.Text != "Cantidad" || TB_Cantidad.Text != "")
+                    {
+                        if (Convert.ToInt32(TB_Cantidad.Text) > 0)
+                        {
+                            try
+                            {
+                                totalVenta += articulo1.precio * Convert.ToInt32(TB_Cantidad.Text);
+                                total += articulo1.precio * Convert.ToInt32(TB_Cantidad.Text);
+                            }
+                            catch
+                            {
+                                MessageBox.Show("El campo de cantidad es incorrecto");
+                                AC = false;
+                            }
+
+                            if (AC)
+                            {
+                                int rowEscribir = DGV_Venta.Rows.Count - 1;
+
+                                DGV_Venta.Rows.Add(1);
+
+                                DGV_Venta.Rows[rowEscribir].Cells[0].Value = articulo1.codigo;
+                                DGV_Venta.Rows[rowEscribir].Cells[1].Value = articulo1.nombre;
+                                DGV_Venta.Rows[rowEscribir].Cells[2].Value = TB_Cantidad.Text;
+                                DGV_Venta.Rows[rowEscribir].Cells[3].Value = articulo1.precio;
+                                DGV_Venta.Rows[rowEscribir].Cells[4].Value = total;
+
+                                list2.Add(articulo1);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingresa una cantidad mayor a 0");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el artículo");
+                }
+            }
         }
 
         private void Venta_MouseMove(object sender, MouseEventArgs e)

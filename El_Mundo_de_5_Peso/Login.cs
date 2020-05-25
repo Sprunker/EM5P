@@ -14,6 +14,7 @@ namespace El_Mundo_de_5_Peso
 {
     public partial class Login : Form
     {
+        string user;
         public int xClick = 0, yClick = 0;
 
         public Login()
@@ -24,6 +25,11 @@ namespace El_Mundo_de_5_Peso
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public string UserLoged()
+        {
+            return user;
         }
 
         public void logins()
@@ -43,11 +49,13 @@ namespace El_Mundo_de_5_Peso
                             if (TB_User.Text == "admin")
                             {
                                 AdminUI admForm = new AdminUI(TB_User.Text);
+                                user = "admin";
                                 admForm.ShowDialog();
                             }
                             else
                             {
                                 Ventas ventas = new Ventas();
+                                user = TB_User.Text;
                                 ventas.ShowDialog();
                             }
 

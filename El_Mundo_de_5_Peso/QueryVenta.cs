@@ -24,8 +24,8 @@ namespace El_Mundo_de_5_Peso
                         case "agregar":
                             {
                                 SqlCommand cmd = new SqlCommand("INSERT INTO Venta(usuario, articulos, cantidad, total, fecha, hora, estado)" +
-                                    "VALUES ('" + venta.usuario + "', '" + venta.articulos + "', '" + venta.cantidad + "', '" + venta.fecha + "'," +
-                                    "'" + venta.hora + "', '" + venta.estado + "')", conexion);
+                                    "VALUES ('" + venta.usuario + "', '" + venta.articulos + "', '" + venta.cantidad + "'," +
+                                    " '" + venta.total + "', '" + venta.fecha + "', '" + venta.hora + "', '" + venta.estado + "')", conexion);
                                 cmd.ExecuteNonQuery();
                                 MessageBox.Show("Venta Realizada");
                             }
