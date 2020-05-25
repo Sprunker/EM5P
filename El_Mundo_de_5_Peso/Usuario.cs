@@ -54,7 +54,7 @@ namespace El_Mundo_de_5_Peso
             bool DC = true;
             bool DL = true;
             bool H = true;
-            // *Hola* //
+            
             // Verificaciones de campos llenos //
             if (TB_Nombre.Text == "Nombre" || TB_Nombre.Text == "" || TB_User.Text == "Usuario" || TB_User.Text == "" || TB_Pass.Text == "Contraseña" ||
                 TB_Pass.Text == "" || TB_RepPass.Text == "Repetir Contraseña" || TB_RepPass.Text == "" || TB_Telefono.Text == "Teléfono" || TB_Telefono.Text == "" ||
@@ -105,7 +105,7 @@ namespace El_Mundo_de_5_Peso
             
             if (DC)
             {
-
+                
                 if (TB_DiasLab.Text == "Fines de Semana")
                 {
                     DL = false;

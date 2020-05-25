@@ -16,12 +16,23 @@ namespace El_Mundo_de_5_Peso
     {
         public Usuarios()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            
+            Conexion cn = new Conexion();
+            cn.Open();
+
+            string query = "SELECT * FROM Usuario";
+            SqlCommand comando = new SqlCommand(query, cn.conexion);
+            SqlDataAdapter data = new SqlDataAdapter(comando);
+            DataTable table = new DataTable();
+            data.Fill(table);
+
+            DGV_Usuarios.DataSource = table;
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void BT_CloseWindow_Click(object sender, EventArgs e)
@@ -52,8 +63,10 @@ namespace El_Mundo_de_5_Peso
             this.Visible = true;
         }
 
-        private void BT_BorUser_Click(object sender, EventArgs e)
+        private void BT_BorUser_Click(object sender, EventArgs e) // TODO: Verificar que funcione
         {
+            int id = 2;
+            bool ok = false;
             // TODO: Verificar que haya seleccionado un usuario //
 
             try
@@ -61,21 +74,36 @@ namespace El_Mundo_de_5_Peso
                 string cnn = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
                 using (SqlConnection conexion = new SqlConnection(cnn))
                 {
-                    // TODO: Obtención del usuario //
+                    Obtener obtener = new Obtener();
+                    List<ObjUsuario> list = obtener.ObtenerLU();
 
-                    ObjUsuario usuario = new ObjUsuario();
+                    foreach(ObjUsuario usuario in list)
+                    {
+                        if(usuario.id == id)
+                        {
+                            SqlCommand cmd = new SqlCommand("DELETE Usuario where id = " + usuario.id, conexion);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Se ha eliminado el usuario " + usuario.usuario);
 
-                    SqlCommand cmd = new SqlCommand("DELETE Usuario where id = " + usuario.id, conexion);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Se ha eliminado el usuario " + usuario.usuario);
-
-                    QueryUsuario query = new QueryUsuario("eliminar", usuario);
+                            QueryUsuario query = new QueryUsuario("eliminar", usuario);
+                        }
+                    }
+                    
+                    if(!ok)
+                    {
+                        MessageBox.Show("No se encontró el usuario");
+                    }
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void BT_Buscar_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void Usuarios_MouseMove(object sender, MouseEventArgs e)

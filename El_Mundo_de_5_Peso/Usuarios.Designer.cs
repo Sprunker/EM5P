@@ -183,6 +183,7 @@
             this.BT_Buscar.TabIndex = 23;
             this.BT_Buscar.Text = "Buscar";
             this.BT_Buscar.UseVisualStyleBackColor = false;
+            this.BT_Buscar.Click += new System.EventHandler(this.BT_Buscar_Click);
             // 
             // BT_AgrUser
             // 
